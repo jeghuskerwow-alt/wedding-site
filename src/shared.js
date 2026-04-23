@@ -4,7 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
-  initCountdown();
   initFaq();
   initRsvp();
 });
@@ -92,44 +91,6 @@ function initNavigation() {
       mobileMenu.classList.toggle('hidden');
     });
   }
-}
-
-/**
- * Countdown timer logic
- */
-function initCountdown() {
-  const countdownEl = document.getElementById('countdown');
-  if (!countdownEl) return;
-
-  const weddingDate = new Date('2026-08-22T14:00:00').getTime();
-
-  const updateCountdown = () => {
-    const now = new Date().getTime();
-    const diff = weddingDate - now;
-
-    if (diff <= 0) {
-      countdownEl.innerHTML = "Dagen er her!";
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minsEl = document.getElementById('mins');
-    const secsEl = document.getElementById('secs');
-
-    if (daysEl) daysEl.innerText = days;
-    if (hoursEl) hoursEl.innerText = hours;
-    if (minsEl) minsEl.innerText = minutes;
-    if (secsEl) secsEl.innerText = seconds;
-  };
-
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
 }
 
 /**

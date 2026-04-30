@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktisk Info | Astrid & Victor</title>
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+  <body class="bg-white text-black antialiased selection:bg-black selection:text-white">
+    
+    <!-- Global Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 bg-white shadow-sm text-black">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        
+        <!-- Desktop Menu Left -->
+        <div class="hidden md:flex items-center gap-8 uppercase tracking-widest text-[10px] font-medium">
+          <a href="/" class="hover:opacity-60 transition-opacity">Forside</a>
+          <a href="/historie.html" class="hover:opacity-60 transition-opacity">Historie</a>
+          <a href="/dagen.html" class="hover:opacity-60 transition-opacity">Dagen</a>
+          <a href="/praktisk.html" class="border-b border-black pb-1">Praktisk info</a>
+          <a href="/onskeliste.html" class="hover:opacity-60 transition-opacity">Ønskeliste</a>
+        </div>
+
+        <!-- Desktop Menu Right (CTA) -->
+        <div class="flex items-center gap-8">
+          <a href="/rsvp.html" class="hidden md:block bg-black text-white px-6 py-2 hover:bg-gray-800 transition-all duration-300 uppercase tracking-widest text-[10px] font-medium">Deltager du?</a>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu" class="hidden fixed inset-0 bg-black text-white flex flex-col items-center justify-center gap-8 text-xl font-serif italic">
+        <button id="mobile-menu-close" class="absolute top-6 right-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+        </button>
+        <a href="/">Forside</a>
+        <a href="/historie.html">Historie</a>
+        <a href="/dagen.html">Dagen</a>
+        <a href="/praktisk.html">Praktisk info</a>
+        <a href="/onskeliste.html">Ønskeliste</a>
+        <a href="/rsvp.html" class="border border-white px-10 py-3 mt-4 not-italic uppercase tracking-widest text-sm">Deltager du?</a>
+      </div>
+    </nav>
+
+    <!-- Content Section -->
+    <main class="pt-32 pb-24 px-6 max-w-6xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-serif mb-16 text-center italic">Praktisk Information</h1>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
+        <div class="text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 opacity-40"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3 class="uppercase tracking-widest text-sm font-semibold mb-4">Adresser</h3>
+          <p class="text-gray-600 font-light mb-2">
+            <span class="font-semibold">Kirke:</span><br />
+            Herslev Bygade 8, 4000 Roskilde
+          </p>
+          <p class="text-gray-600 font-light">
+            <span class="font-semibold">Fest:</span><br />
+            Herslevvej 49, 4000 Roskilde
+          </p>
+        </div>
+
+        <div class="text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 opacity-40"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h3 class="uppercase tracking-widest text-sm font-semibold mb-4">Parkering</h3>
+          <p class="text-gray-600 font-light">
+            Der er rig mulighed for parkering direkte på Herslevgaard
+          </p>
+        </div>
+
+        <div class="text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 opacity-40"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.62 1.96v10.38a2 2 0 0 0 1.62 1.96L8 19.2a4 4 0 0 1 8 0l4.38-1.44a2 2 0 0 0 1.62-1.96V5.42a2 2 0 0 0-1.62-1.96Z"/></svg>
+          <h3 class="uppercase tracking-widest text-sm font-semibold mb-4">Dresscode</h3>
+          <p class="text-gray-600 font-light">
+            Smokings & Lange kjoler.<br />
+            <span class="text-xs italic text-gray-400">Vi beder venligst om, at ingen bærer hvidt eller lignende farver.</span>
+          </p>
+        </div>
+
+        <div class="text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4 opacity-40"><path d="M12 20h.01"/><path d="M7 16.44a8.7 8.7 0 0 1 10 0"/><path d="M3.41 12.04a14.95 14.95 0 0 1 17.18 0"/><path d="M12 2v4"/></svg>
+          <h3 class="uppercase tracking-widest text-sm font-semibold mb-4">Toastmasters</h3>
+          <p class="text-gray-600 font-light">
+            Josefine Topsoe<br />
+            Laura Brogaard
+          </p>
+        </div>
+      </div>
+
+      <!-- Google Maps Integration -->
+      <div class="h-[400px] w-full rounded-lg overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all duration-700 shadow-xl mb-24">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2254.218567118228!2d11.98064437734135!3d55.6713149730554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465259468e821033%3A0x6b48455d3e67040!2sHerslev%20Bygade%208%2C%204000%20Roskilde!5e0!3m2!1sda!2sdk!4v1712564700000!5m2!1sda!2sdk" 
+          width="100%" 
+          height="100%" 
+          style="border: 0" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="max-w-3xl mx-auto">
+        <h2 class="text-4xl font-serif mb-12 text-center italic">Spørgsmål & Svar</h2>
+        
+        <div class="space-y-4">
+          <div class="border-b border-black/10">
+            <button class="faq-btn w-full py-6 flex justify-between items-center text-left hover:opacity-60 transition-opacity">
+              <span class="font-serif text-xl italic">Er der overnatningsmuligheder i nærheden?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="hidden pb-6 text-gray-600 font-light leading-relaxed">
+              Ja, der findes flere hoteller og B&B's i Roskilde og omegn. Vi anbefaler at booke i god tid, da august er en populær måned.
+            </div>
+          </div>
+
+          <div class="border-b border-black/10">
+            <button class="faq-btn w-full py-6 flex justify-between items-center text-left hover:opacity-60 transition-opacity">
+              <span class="font-serif text-xl italic">Må vi medbringe børn?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="hidden pb-6 text-gray-600 font-light leading-relaxed">
+              Vi elsker jeres børn, men til vores bryllup har vi valgt at holde en fest for voksne. Vi håber på jeres forståelse.
+            </div>
+          </div>
+
+          <div class="border-b border-black/10">
+            <button class="faq-btn w-full py-6 flex justify-between items-center text-left hover:opacity-60 transition-opacity">
+              <span class="font-serif text-xl italic">Hvem skal jeg kontakte vedrørende taler?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="hidden pb-6 text-gray-600 font-light leading-relaxed">
+              Alle indslag og taler skal koordineres med vores toastmasters, Josefine Topsoe og Laura Brogaard, senest 14 dage før brylluppet. For at holde tidsplanen ser vi gerne, at indslag tidsmæssigt holder sig til 5 minutter eller mindre.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-black/5 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-serif italic mb-4">Astrid & Victor</h2>
+        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">22.08.2026 — Herslevgaard</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/shared.js"></script>
+    <script>
+      document.getElementById('mobile-menu-close').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    </script>
+  </body>
+</html>

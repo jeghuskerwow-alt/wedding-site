@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ønskeliste | Astrid & Victor</title>
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+  <body class="bg-white text-black antialiased selection:bg-black selection:text-white">
+    
+    <!-- Global Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 bg-white shadow-sm text-black">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        
+        <!-- Desktop Menu Left -->
+        <div class="hidden md:flex items-center gap-8 uppercase tracking-widest text-[10px] font-medium">
+          <a href="/" class="hover:opacity-60 transition-opacity">Forside</a>
+          <a href="/historie.html" class="hover:opacity-60 transition-opacity">Historie</a>
+          <a href="/dagen.html" class="hover:opacity-60 transition-opacity">Dagen</a>
+          <a href="/praktisk.html" class="hover:opacity-60 transition-opacity">Praktisk info</a>
+          <a href="/onskeliste.html" class="border-b border-black pb-1">Ønskeliste</a>
+        </div>
+
+        <!-- Desktop Menu Right (CTA) -->
+        <div class="flex items-center gap-8">
+          <a href="/rsvp.html" class="hidden md:block bg-black text-white px-6 py-2 hover:bg-gray-800 transition-all duration-300 uppercase tracking-widest text-[10px] font-medium">Deltager du?</a>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div id="mobile-menu" class="hidden fixed inset-0 bg-black text-white flex flex-col items-center justify-center gap-8 text-xl font-serif italic">
+        <button id="mobile-menu-close" class="absolute top-6 right-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+        </button>
+        <a href="/">Forside</a>
+        <a href="/historie.html">Historie</a>
+        <a href="/dagen.html">Dagen</a>
+        <a href="/praktisk.html">Praktisk info</a>
+        <a href="/onskeliste.html">Ønskeliste</a>
+        <a href="/rsvp.html" class="border border-white px-10 py-3 mt-4 not-italic uppercase tracking-widest text-sm">Deltager du?</a>
+      </div>
+    </nav>
+
+    <!-- Content Section -->
+    <main class="pt-32 pb-24">
+      <div class="max-w-4xl mx-auto px-6 text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-serif mb-8 italic">Vores Ønskeliste</h1>
+        <p class="text-gray-600 font-light italic text-lg leading-relaxed">
+          Vi sætter utrolig stor pris på jeres nærvær på vores store dag. Skulle I have lyst til at give en gave, har vi samlet nogle ønsker herunder til inspiration.
+        </p>
+      </div>
+
+      <!-- Carousel Container -->
+      <div class="relative overflow-hidden group mb-24">
+        <div class="flex gap-8 px-6 animate-marquee pause-on-hover w-max">
+          <!-- Double the items for seamless loop -->
+          <div class="flex gap-8">
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&q=80&w=400" alt="Espressomaskine" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Espressomaskine</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=400" alt="Weekendophold" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Weekendophold</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=400" alt="Keramik stel" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Keramik stel</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=400" alt="Nye sengetæpper" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Nye sengetæpper</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=400" alt="Oplevelsesgave" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Oplevelsesgave</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=400" alt="Kunst til væggen" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Kunst til væggen</h3>
+            </div>
+          </div>
+          <!-- Repeat for loop -->
+          <div class="flex gap-8">
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&q=80&w=400" alt="Espressomaskine" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Espressomaskine</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=400" alt="Weekendophold" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Weekendophold</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&q=80&w=400" alt="Keramik stel" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Keramik stel</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=400" alt="Nye sengetæpper" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Nye sengetæpper</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&q=80&w=400" alt="Oplevelsesgave" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Oplevelsesgave</h3>
+            </div>
+            <div class="w-64 flex-shrink-0 group/item">
+              <div class="aspect-[4/5] overflow-hidden mb-4 grayscale hover:grayscale-0 transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=400" alt="Kunst til væggen" class="w-full h-full object-cover transform group-hover/item:scale-105 transition-transform duration-700" referrerpolicy="no-referrer">
+              </div>
+              <h3 class="font-serif italic text-lg">Kunst til væggen</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a 
+          href="https://onskeskyen.dk/placeholder" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block border border-black px-12 py-4 uppercase tracking-[0.3em] text-xs hover:bg-black hover:text-white transition-all duration-500 font-medium"
+        >
+          Se hele vores ønskeliste på Ønskeskyen
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-black/5 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl font-serif italic mb-4">Astrid & Victor</h2>
+        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">22.08.2026 — Herslevgaard</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/shared.js"></script>
+    <script>
+      document.getElementById('mobile-menu-close').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    </script>
+  </body>
+</html>

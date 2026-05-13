@@ -53,7 +53,7 @@
         <div id="rsvp-form-section">
           <div id="rsvp-header" class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-serif mb-4 italic">Deltager du?</h1>
-            <p class="opacity-60 font-light italic">Vi glæder os til at høre fra jer senest d. 1. juni 2026</p>
+            <p class="opacity-60 font-light italic">Vi glæder os til at høre fra dig senest d. 30. juni 2026</p>
           </div>
 
           <div id="rsvp-container">
@@ -199,6 +199,49 @@
           additionalInfo.classList.add('hidden');
         }
       });
+
+      // Handle RSVP Form Submission
+      const rsvpForm = document.getElementById('rsvp-form');
+      const rsvpSuccess = document.getElementById('rsvp-success-section');
+      const rsvpFormSection = document.getElementById('rsvp-form-section');
+
+      if (rsvpForm && rsvpSuccess) {
+        rsvpForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const submitBtn = rsvpForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerText;
+          submitBtn.innerText = 'SENDER...';
+          submitBtn.disabled = true;
+
+          const formData = new FormData(rsvpForm);
+
+          try {
+            const response = await fetch(rsvpForm.action, {
+              method: rsvpForm.method,
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+
+            if (response.ok) {
+              rsvpFormSection.classList.add('hidden');
+              rsvpSuccess.classList.remove('hidden');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+              alert('Der opstod en fejl. Prøv venligst igen.');
+              submitBtn.innerText = originalText;
+              submitBtn.disabled = false;
+            }
+          } catch (error) {
+            console.error('Submission error:', error);
+            alert('Der opstod en fejl ved afsendelse. Tjek venligst din internetforbindelse.');
+            submitBtn.innerText = originalText;
+            submitBtn.disabled = false;
+          }
+        });
+      }
     </script>
   </body>
 </html>

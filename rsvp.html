@@ -50,69 +50,72 @@
     <main class="pt-32 pb-24 px-6 bg-black text-white min-h-screen flex items-center">
       <div class="max-w-xl mx-auto w-full">
         
-        <div id="rsvp-container">
+        <div id="rsvp-content">
           <div id="rsvp-header" class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-serif mb-4 italic">Deltager du?</h1>
             <p class="opacity-60 font-light italic">Vi glæder os til at høre fra jer senest d. 1. juni 2026</p>
           </div>
-          <form id="rsvp-form" class="space-y-8" action="https://formspree.io/f/xojyjvvy" method="POST">
-            
-            <div class="mb-12">
-              <label class="block uppercase tracking-widest text-[10px] mb-2 opacity-60">Hvor mange personer er I?</label>
-              <select 
-                id="guest-count"
-                name="Antal personer samlet"
-                class="w-full bg-transparent border-b border-white/20 py-2 focus:border-white outline-none transition-colors font-light appearance-none text-white"
-              >
-                <option value="0" class="bg-black text-white">Vælg antal...</option>
-                <option value="1" class="bg-black text-white">1 person</option>
-                <option value="2" class="bg-black text-white">2 personer</option>
-                <option value="3" class="bg-black text-white">3 personer</option>
-                <option value="4" class="bg-black text-white">4 personer</option>
-                <option value="5" class="bg-black text-white">5 personer</option>
-                <option value="6" class="bg-black text-white">6 personer</option>
-                <option value="7" class="bg-black text-white">7 personer</option>
-                <option value="8" class="bg-black text-white">8 personer</option>
-                <option value="9" class="bg-black text-white">9 personer</option>
-                <option value="10" class="bg-black text-white">10 personer</option>
-              </select>
-            </div>
 
-            <!-- This is where the dynamic guest fields will appear -->
-            <div id="guest-fields-container" class="space-y-12"></div>
-
-            <div id="additional-info" class="hidden space-y-8">
-              <div>
-                <label class="block uppercase tracking-widest text-[10px] mb-2 opacity-60">Eventuel kommentar</label>
-                <textarea 
-                  rows="3"
-                  name="message"
-                  class="w-full bg-transparent border-b border-white/20 py-2 focus:border-white outline-none transition-colors font-light resize-none"
-                  placeholder="Allergier, særlige hensyn eller andet..."
-                ></textarea>
-              </div>
-
-              <div class="flex items-center gap-3 py-2 cursor-pointer group">
-                <input 
-                  type="checkbox" 
-                  id="breakfast" 
-                  name="Morgenmad dagen efter"
-                  value="Ja"
-                  class="w-4 h-4 accent-white bg-transparent border-white/20 rounded cursor-pointer"
+          <div id="rsvp-container">
+            <form id="rsvp-form" class="space-y-8" action="https://formspree.io/f/xojyjvvy" method="POST">
+              
+              <div class="mb-12">
+                <label class="block uppercase tracking-widest text-[10px] mb-2 opacity-60">Hvor mange personer er I?</label>
+                <select 
+                  id="guest-count"
+                  name="Antal personer samlet"
+                  class="w-full bg-transparent border-b border-white/20 py-2 focus:border-white outline-none transition-colors font-light appearance-none text-white"
                 >
-                <label for="breakfast" class="uppercase tracking-widest text-[10px] opacity-60 group-hover:opacity-100 cursor-pointer transition-opacity">
-                  Vi deltager i morgenmad dagen efter
-                </label>
+                  <option value="0" class="bg-black text-white">Vælg antal...</option>
+                  <option value="1" class="bg-black text-white">1 person</option>
+                  <option value="2" class="bg-black text-white">2 personer</option>
+                  <option value="3" class="bg-black text-white">3 personer</option>
+                  <option value="4" class="bg-black text-white">4 personer</option>
+                  <option value="5" class="bg-black text-white">5 personer</option>
+                  <option value="6" class="bg-black text-white">6 personer</option>
+                  <option value="7" class="bg-black text-white">7 personer</option>
+                  <option value="8" class="bg-black text-white">8 personer</option>
+                  <option value="9" class="bg-black text-white">9 personer</option>
+                  <option value="10" class="bg-black text-white">10 personer</option>
+                </select>
               </div>
 
-              <button 
-                type="submit"
-                class="w-full border border-white/40 py-4 uppercase tracking-[0.3em] text-xs hover:bg-white hover:text-black transition-all duration-500 font-medium"
-              >
-                Indsend svar
-              </button>
-            </div>
-          </form>
+              <!-- This is where the dynamic guest fields will appear -->
+              <div id="guest-fields-container" class="space-y-12"></div>
+
+              <div id="additional-info" class="hidden space-y-8">
+                <div>
+                  <label class="block uppercase tracking-widest text-[10px] mb-2 opacity-60">Eventuel kommentar</label>
+                  <textarea 
+                    rows="3"
+                    name="message"
+                    class="w-full bg-transparent border-b border-white/20 py-2 focus:border-white outline-none transition-colors font-light resize-none"
+                    placeholder="Allergier, særlige hensyn eller andet..."
+                  ></textarea>
+                </div>
+
+                <div class="flex items-center gap-3 py-2 cursor-pointer group">
+                  <input 
+                    type="checkbox" 
+                    id="breakfast" 
+                    name="Morgenmad dagen efter"
+                    value="Ja"
+                    class="w-4 h-4 accent-white bg-transparent border-white/20 rounded cursor-pointer"
+                  >
+                  <label for="breakfast" class="uppercase tracking-widest text-[10px] opacity-60 group-hover:opacity-100 cursor-pointer transition-opacity">
+                    Vi deltager i morgenmad dagen efter
+                  </label>
+                </div>
+
+                <button 
+                  type="submit"
+                  class="w-full border border-white/40 py-4 uppercase tracking-[0.3em] text-xs hover:bg-white hover:text-black transition-all duration-500 font-medium"
+                >
+                  Indsend svar
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div id="rsvp-success" class="hidden text-center py-12">

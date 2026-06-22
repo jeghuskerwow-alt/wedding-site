@@ -47,17 +47,42 @@
     </nav>
 
     <!-- Content Section -->
-    <main class="pt-32 pb-24">
-      <div class="max-w-4xl mx-auto px-6 text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-serif mb-8 italic">Vores Ønskeliste</h1>
-        <p class="text-gray-600 font-light italic text-lg leading-relaxed">
-          Coming soon...
+    <main class="pt-32 pb-32 min-h-screen bg-white">
+      <div class="max-w-4xl mx-auto px-6 text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-serif mb-6 italic">Vores Ønskeliste</h1>
+      </div>
+
+      <!-- Edge-to-Edge Infinite Scrolling Carousel -->
+      <div class="w-full overflow-hidden bg-stone-50 py-12 border-y border-stone-100 relative">
+        <!-- Visual fade effects on left and right edges for a luxurious cinematic feel -->
+        <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        
+        <div class="relative w-full overflow-hidden">
+          <div id="wish-carousel-track" class="flex gap-8 whitespace-nowrap animate-marquee pause-on-hover py-4 hover:cursor-pointer">
+            <!-- Populated dynamically by JavaScript to support perfect seamless loop -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct Link CTA Section -->
+      <div class="max-w-xl mx-auto px-6 text-center mt-16">
+        <p class="text-gray-500 font-light italic text-sm mb-6">
+          I kan også tilgå og koordinere alle vores ønsker samlet direkte på vores fulde Ønskesky.
         </p>
+        <a 
+          href="https://onskeskyen.dk/da/wishlists/Pz1YsSRgrzQcvLGh" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-block border border-black py-4 px-8 uppercase tracking-[0.2em] text-[10px] font-semibold transition-all duration-500 hover:bg-black hover:text-white rounded-xs"
+        >
+          Se hele ønskelisten her
+        </a>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-black/5 text-center">
+    <footer class="py-12 px-6 border-t border-black/5 text-center bg-white">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl font-serif italic mb-4">Astrid & Victor</h2>
         <p class="text-[10px] uppercase tracking-[0.4em] text-gray-400">22.08.2026 — Herslevgaard</p>
@@ -69,6 +94,101 @@
       document.getElementById('mobile-menu-close').addEventListener('click', () => {
         document.getElementById('mobile-menu').classList.add('hidden');
       });
+
+      // Wedding Wishes Data from CSV
+      const wishes = [
+        {
+          name: "Sage SES878BSS Barista Pro Espressomaskine Stål",
+          link: "https://onskeskyen.dk/da/wishlists/Pz1YsSRgrzQcvLGh/wish/blFCRJSO7A2P2M0r",
+          bw: "Coffee_BW.png",
+          color: "Coffee_color.png"
+        },
+        {
+          name: "Villeroy & Boch Victor bestiksæt 30 dele Rustfrit stål",
+          link: "https://onskeskyen.dk/da/wishlists/Pz1YsSRgrzQcvLGh/wish/wExVfa3V67aX8Lzh?wishlistId=Pz1YsSRgrzQcvLGh&wishId=ScRQofoG45zHYRJW&source=MoreFromThisWishlist&sourceId=&sourceName=&position=OTHER_WISH&productSource=MoreFromThisWishlist",
+          bw: "bestik_bw.png",
+          color: "bestik_color.png"
+        },
+        {
+          name: "Tilskud: Cocoon Aeris i poleret stål",
+          link: "https://onskeskyen.dk/da/wishlists/Pz1YsSRgrzQcvLGh/wish/dSW5KiNaqC8EUVPT",
+          bw: "cocoon_bw.png",
+          color: "cocoon_color.png"
+        },
+        {
+          name: "Thera krystal lysekrone chrome",
+          link: "https://onskeskyen.dk/da/wishlists/Pz1YsSRgrzQcvLGh/wish/odLJYkucnevzR3Bk",
+          bw: "Crystal_bw.png",
+          color: "Crystal_color.png"
+        },
+        {
+          name: "LANTERNE | TIN | H 50 CM | Tine K Home",
+          link: "https://onskeskyen.dk/da/wishlists/Pz1YsSRgrzQcvLGh/wish/ScRQofoG45zHYRJW",
+          bw: "lanterne_bw.png",
+          color: "lanterne_color.png"
+        },
+        {
+          name: "Drinks & professionelt barudstyr",
+          link: "https://onskeskyen.dk/da/wishlists/Pz1YsSRgrzQcvLGh",
+          bw: "bar_bw.png",
+          color: "bar_color.png"
+        }
+      ];
+
+      // To achieve infinite, seamless CSS marquee effect, we duplicate the array of elements.
+      // Doing it twice guarantees a perfect loop with translateX(-50%).
+      const combinedWishes = [...wishes, ...wishes];
+      
+      const track = document.getElementById('wish-carousel-track');
+      track.innerHTML = combinedWishes.map((wish, index) => {
+        return `
+          <div class="inline-block w-64 md:w-72 flex-shrink-0 relative group rounded-md overflow-hidden bg-white border border-black/5 transition-all duration-700 hover:shadow-xl hover:-translate-y-1 mx-2">
+            <!-- Image Frame -->
+            <div class="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden">
+              <!-- Black and White version (Default) -->
+              <img 
+                src="${wish.bw}" 
+                alt="${wish.name}" 
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0 group-hover:scale-105" 
+                loading="lazy"
+              />
+              
+              <!-- Color version (Appears on hover) -->
+              <img 
+                src="${wish.color}" 
+                alt="${wish.name}" 
+                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-105" 
+                loading="lazy"
+              />
+              
+              <!-- Subtle high-end Gradient Overlay for text visibility -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5 text-white whitespace-normal text-center">
+                <h3 class="font-serif italic text-sm md:text-base mb-3 leading-snug">
+                  ${wish.name}
+                </h3>
+                <a 
+                  href="${wish.link}" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-block border border-white/80 hover:bg-white hover:text-black py-2 px-3 uppercase tracking-widest text-[9px] font-medium transition-all duration-300"
+                >
+                  Se på Ønskeskyen
+                </a>
+              </div>
+            </div>
+            
+            <!-- Default Label under Card -->
+            <div class="p-4 text-center transition-colors duration-500 border-t border-black/[0.03]">
+              <span class="block font-serif italic text-xs text-stone-800 truncate px-1 group-hover:text-black group-hover:font-medium">
+                ${wish.name}
+              </span>
+              <span class="block text-[8px] uppercase tracking-widest text-stone-400 mt-1 transition-colors duration-500 group-hover:text-stone-700">
+                Gå til ønske &rarr;
+              </span>
+            </div>
+          </div>
+        `;
+      }).join('');
     </script>
   </body>
 </html>
